@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cloudinary = require('cloudinary').v2
-//const documentation = require('./src/utils/documentation/index.json')
+const documentation = require('./src/utils/documentation/index.json')
 const UserRoutes = require('./src/api/user/user.routes')
 const CryptosRoutes = require('./src/api/cryptos/cryptos.routes')
 const ExchangeRoutes = require('./src/api/exchanges/exchanges.routes')
@@ -41,9 +41,9 @@ app.use('/api/users', UserRoutes)
 app.use('/api/cryptos', CryptosRoutes)
 app.use('/api/exchanges', ExchangeRoutes)
 
-//app.use('/', (req, res, next) => {
- //   return res.json(documentation)
-//})
+app.use('/', (req, res, next) => {
+    return res.json(documentation)
+})
 
 app.use('*', (req, res, next) => {
     return next(setError(404, 'Route not found'))
