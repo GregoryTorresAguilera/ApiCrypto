@@ -1,0 +1,151 @@
+{
+  "users": [
+    {
+      "endpoint": "/api/users/register",
+      "action": "POST",
+      "parameters": {
+        "name": "Name Surname",
+        "email": "example@mail.com",
+        "password": "Pass12345!"
+      },
+      "response": {
+        "name": "Name Surname",
+        "email": "example@mail.com"
+      }
+    },
+
+    {
+      "endpoint": "/api/users/login",
+      "action": "POST",
+      "parameters": {
+        "email": "example@mail.com",
+        "password": "Pass12345!"
+      },
+      "response": "Token (24h expires)"
+    },
+
+    {
+      "endpoint": "/api/users/logout",
+      "action": "POST",
+      "parameters": {
+        "email": "example@mail.com",
+        "password": "Pass12345!"
+      },
+      "response": "null"
+    }
+  ],
+  "exchanges": [
+    {
+      "endpoint": "/api/exchanges",
+      "action": "GET",
+      "response": {
+        "_id": "61e46f7a84969bb4d734032b",
+        "name": "Binance",
+        "country": "China",
+        "cryptos": [
+          {
+            "_id": "61e142bb29a20cf74b7ecc27",
+            "name": "BNB",
+            "web": "https://www.binance.com/es",
+            "wallet": "Binance Smart Chain",
+            "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642366236/CryptoApi/tsyhzjbas4bdmkigxxgy.jpg",
+            "createdAt": "2022-01-14T09:30:35.208Z",
+            "updatedAt": "2022-01-14T09:30:35.208Z",
+            "__v": 0
+          }
+        ]
+      }
+    },
+
+    {
+      "endpoint": "/api/exchanges/filter/:id",
+      "description": "You can search Exchanges by country: China, Hong Kong, USA, España, Suiza, Bahamas",
+      "endpointExample": "/api/exchanges/filter/España",
+      "action": "GET",
+      "response": {
+        "_id": "61e487b4035a59d819348ce2",
+        "name": "Eurocoinpay",
+        "country": "España",
+        "__v": 0,
+        "cryptos": [
+          {
+            "_id": "61e4850d035a59d819348cae",
+            "name": "BNB",
+            "web": "https://www.binance.com/es",
+            "wallet": "Binance Smart Chain",
+            "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642366236/CryptoApi/tsyhzjbas4bdmkigxxgy.jpg",
+            "createdAt": "2022-01-16T20:50:21.432Z",
+            "updatedAt": "2022-01-16T20:50:21.432Z",
+            "__v": 0
+          }
+        ]
+      }
+    }
+  ],
+
+  "cryptos": [
+    {
+      "endpoint": "/api/cryptos",
+      "action": "GET",
+      "response": [
+        {
+          "_id": "61e47440035a59d819348ca4",
+          "name": "iota",
+          "web": "https://www.iota.org/",
+          "wallet": "Firefly",
+          "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642361935/CryptoApi/rnyzop4onqwsaj0nt7qn.jpg",
+          "createdAt": "2022-01-16T19:38:40.449Z",
+          "updatedAt": "2022-01-16T19:38:40.449Z",
+          "__v": 0
+        },
+        {
+          "_id": "61e484a0035a59d819348ca8",
+          "name": "Algorand",
+          "web": "https://www.algorand.com/",
+          "wallet": "Metamask",
+          "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642366127/CryptoApi/wttaxvnehlefbzo5udtp.jpg",
+          "createdAt": "2022-01-16T20:48:32.639Z",
+          "updatedAt": "2022-01-16T20:48:32.639Z",
+          "__v": 0
+        }
+      ]
+    },
+
+    {
+      "endpoint": "/api/cryptos/filter/:wallet",
+      "description": "You can search Cryptos by wallet: Metamask, Ledger, Binance Smart Chain, Yoroi",
+      "endpointExample": "/api/cryptos/filter/Yoroi",
+      "action": "GET",
+      "response": [
+        {
+            "_id": "61e4853d035a59d819348cb1",
+            "name": "Cardano",
+            "web": "https://cardano.org/",
+            "wallet": "Yoroi",
+            "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642366284/CryptoApi/jh0xzpwz3t0qcsuj2zee.jpg",
+            "createdAt": "2022-01-16T20:51:09.086Z",
+            "updatedAt": "2022-01-16T20:51:09.086Z",
+            "__v": 0
+            }
+      ]
+    },
+
+    {
+      "endpoint": "/api/cryptos/:id",
+      "endpointExample": "/api/cryptos/61e484a0035a59d819348ca8",
+      "action": "GET",
+      "response": [
+        {
+            "_id": "61e484a0035a59d819348ca8",
+            "name": "Algorand",
+            "web": "https://www.algorand.com/",
+            "wallet": "Metamask",
+            "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642366127/CryptoApi/wttaxvnehlefbzo5udtp.jpg",
+            "createdAt": "2022-01-16T20:48:32.639Z",
+            "updatedAt": "2022-01-16T20:48:32.639Z",
+            "__v": 0
+            }
+      ]
+    }
+  ]
+}
